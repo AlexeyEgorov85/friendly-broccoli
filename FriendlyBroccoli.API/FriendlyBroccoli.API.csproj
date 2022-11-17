@@ -15,8 +15,4 @@
     <ProjectReference Include="..\FriendlyBroccoli.DataAccess\FriendlyBroccoli.DataAccess.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-     <InternalsVisibleTo Include="MyTestProject" />
-  </ItemGroup>
-
 </Project>
