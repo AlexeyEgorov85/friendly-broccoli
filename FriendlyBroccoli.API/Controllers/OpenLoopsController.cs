@@ -43,6 +43,7 @@ public class OpenLoopsController : ControllerBase
 
     [HttpPost]
     [ProducesResponseType(typeof(Guid), (int)HttpStatusCode.OK)]
+    [ProducesResponseType(typeof(string), (int)HttpStatusCode.BadRequest)]
     public IActionResult Create([FromBody] CreateOpenLoopRequest newOpenLoop)
     {
         var result = Repository.CreateNew(newOpenLoop.Note);
