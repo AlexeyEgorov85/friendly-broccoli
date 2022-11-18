@@ -17,17 +17,15 @@ public class Repository
 
     public static Result<Guid> CreateNew(string noteStr)
     {
-        var guid = Guid.NewGuid();
-
         var note = Note.Create(noteStr);
-
         if (note.IsFailure)
         {
             return Result.Failure<Guid>(note.Error);
         }
 
-        _openLoops.Add(new OpenLoop(noteStr));
+        var openLoop = new OpenLoop(note.Value);
+        _openLoops.Add(openLoop);
 
-        return guid;
+        return openLoop.Id;
     }
 }

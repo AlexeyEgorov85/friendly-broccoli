@@ -16,6 +16,7 @@ public class OpenLoop
             throw new ArgumentException(note.Error);
         }
 
+        Note = note.Value;
         GeneralCreate();      
     }
 
